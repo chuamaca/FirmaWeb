@@ -13,6 +13,7 @@ Util\ConexionJDBC.class
 Modelo\Categoria.class
 Data\DServicio.class
 Modelo\Cliente.class
+controlador\control.class
 Data\DCategoria.class
 Data\Tabla_PdfVO$2.class
 Data\Tabla_PdfVO.class

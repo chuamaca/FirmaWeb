@@ -27,6 +27,7 @@ import java.util.List;
  *
  * @author Cesar
  */
+
 public class DServicio {
 
     private String SQL_SELECT_BY_CLIENTE = "select d.IdDocumento, c.Nombre as 'Empresa', c2.Nombre as 'Categoria' , d.ArchivoOrigen, COALESCE(s.IdServicio , 0) as 'Firmado', \n"
