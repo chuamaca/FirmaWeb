@@ -4,6 +4,7 @@
  */
 package Modelo;
 
+import java.sql.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -30,10 +31,8 @@ public class ServicioDocumento extends Documento {
     public java.sql.Date FechaServicio;
     public java.sql.Date FechaVigencia;
     
-    
-    
     public String UsuarioFirma;
     public String Categoria;
     public String Empresa;
-
+     
 }

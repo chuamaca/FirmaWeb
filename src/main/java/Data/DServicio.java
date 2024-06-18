@@ -9,6 +9,7 @@ import Modelo.Documento;
 import Modelo.Servicio;
 import Modelo.ServicioDocumento;
 import Util.ConexionJDBC;
+import Util.SQLConexionNoValido;
 import java.io.ByteArrayInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -56,6 +57,7 @@ public class DServicio {
 
         try {
             conn = ConexionJDBC.getConexion();
+            System.out.println(conn);
             stmt = conn.prepareStatement(SQL_SELECT_BY_CLIENTE);
 //            stmt.setInt(1, IdCliente);
             rs = stmt.executeQuery();

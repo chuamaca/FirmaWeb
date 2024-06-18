@@ -6,6 +6,7 @@ Data\DCliente.class
 Data\DDocumento.class
 Data\Tabla_PdfVO$1.class
 Modelo\Usuario.class
+Util\SQLConexionNoValido.class
 Data\DDocumentoFirmado.class
 Modelo\Auditoria.class
 Modelo\ServicioDocumento.class
@@ -13,6 +14,7 @@ Util\ConexionJDBC.class
 Modelo\Categoria.class
 Data\DServicio.class
 Modelo\Cliente.class
+controlador\control.class
 Data\DCategoria.class
 Data\Tabla_PdfVO$2.class
 Data\Tabla_PdfVO.class

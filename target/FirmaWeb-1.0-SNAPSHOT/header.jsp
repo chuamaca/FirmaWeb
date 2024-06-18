@@ -66,7 +66,7 @@
                     <a class="nav-link" href="${pageContext.request.contextPath}/formDocumento.jsp">Nuevo Documento</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/formListaDocumento.jsp">Lista de Documentos</a>
+                    <a class="nav-link" href="control?opc=1">Lista de Documentos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="${pageContext.request.contextPath}/plantillaCrud.jsp">CRUD Plantillas</a>
