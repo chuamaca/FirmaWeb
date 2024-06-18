@@ -11,6 +11,7 @@ Modelo\Auditoria.class
 Modelo\ServicioDocumento.class
 Util\ConexionJDBC.class
 Modelo\Categoria.class
+Util\SQLConexion.class
 Data\DServicio.class
 Modelo\Cliente.class
 controlador\control.class

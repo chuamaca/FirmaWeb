@@ -9,6 +9,7 @@ import Modelo.Documento;
 import Modelo.Servicio;
 import Modelo.ServicioDocumento;
 import Util.ConexionJDBC;
+import Util.SQLConexion;
 import java.io.ByteArrayInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -27,7 +28,6 @@ import java.util.List;
  *
  * @author Cesar
  */
-
 public class DServicio {
 
     private String SQL_SELECT_BY_CLIENTE = "select d.IdDocumento, c.Nombre as 'Empresa', c2.Nombre as 'Categoria' , d.ArchivoOrigen, COALESCE(s.IdServicio , 0) as 'Firmado', \n"
@@ -56,7 +56,8 @@ public class DServicio {
         List<ServicioDocumento> listDocumento = new ArrayList<>();
 
         try {
-            conn = ConexionJDBC.getConexion();
+            conn = SQLConexion.getConexion();
+            System.out.println(conn);
             stmt = conn.prepareStatement(SQL_SELECT_BY_CLIENTE);
 //            stmt.setInt(1, IdCliente);
             rs = stmt.executeQuery();
