@@ -19,23 +19,27 @@ public class ConexionJDBC {
 
     public static Connection getConexion() {
 
-       String conexionServer = "jdbc:sqlserver://firmaelectronica.mssql.somee.com;"
+        String conexionServer = "jdbc:sqlserver://firmaelectronica.mssql.somee.com;"
                 + "database=firmaelectronica;"
                 + "user=chuamaca_SQLLogin_1;"
                 + "password=pdwarm2x6t;"
                 + "loginTimeout=30;"
                 + "encrypt=true;"
                 + "trustServerCertificate=True;";
+        
+         Connection con=null;
         try {
-            Connection con = DriverManager.getConnection(conexionServer);
-            return con;
-
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            con = DriverManager.getConnection(conexionServer);
+        } catch (ClassNotFoundException ex) {
+            
         } catch (SQLException ex) {
 
             System.out.println(ex.toString());
             return null;
-
         }
+        
+        return con;
     }
 
     public static void close(ResultSet rs) {
