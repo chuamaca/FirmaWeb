@@ -9,6 +9,7 @@
 
     List<ServicioDocumento> listaDocumentos = (ArrayList<ServicioDocumento>) request.getAttribute("dato");
     String estadoFirma = "";
+    String fechaServicio = "";
 %>
 
 <div class="container">
@@ -29,40 +30,39 @@
 <table class="table table-striped mt-4">
     <thead>
         <tr class="">
-            <th>Empresa<th>Tipo Firma <th> Estado  <th>Acciones
+            <th>Empresa<th>Tipo Firma <th> Estado <th> Fecha Servicio  <th> Acciones
     </thead>  
     <%
         for (ServicioDocumento x : listaDocumentos) {
 
             if (x.getIdServicio() == 0) {
                 estadoFirma = "Sin Firmado";
+                fechaServicio = "";
             }
             if (x.getIdServicio() > 0) {
                 estadoFirma = "Firmado";
+                fechaServicio = x.getFechaServicio().toString();
             }
-            out.print("<tr><td>" + x.getEmpresa() + "<td>" + x.getCategoria() + "<td>" + estadoFirma);
+            out.print("<tr><td>" + x.getEmpresa() + "<td>" + x.getCategoria() + "<td>" + estadoFirma + "<td>" + fechaServicio);
     %>
 
     <td>
-        <button class="btn btn-primary btn-sm">Ver Documento</button>
-        <button class="btn btn-primary btn-sm">Descargar</button>
+        <a href="downloadPdfServlet?IdDocumento=<%= x.getIdDocumento()%>" class="btn btn-primary">Ver Documento</a>
 
         <%
             if ("Firmado".equals(estadoFirma)) {
         %>
         <a href="#" class="btn btn-success disabled-link">Firmar</a>
+        <a href="downloadPdfFirmadoServlet?IdServicio=<%= x.getIdServicio()%>" class="btn btn-primary">Descargar</a>
+
         <%
         } else {
         %>
         <a href="control?opc=11&IdDocumento=<%= x.getIdDocumento()%>" class="btn btn-success">Firmar</a>
+        <a href="#" class="btn btn-primary disabled-link">Descargar</a>
         <%
             }
         %>
-
-
-<!-- <a href="control?opc=11&IdDocumento=<%=x.getIdDocumento()%>" class="btn btn-success">Firmar</a>   <button class="btn btn-warning btn-sm">Firmar</button> -->
-        <button class="btn btn-danger btn-sm">Anular Documento</button>
-        <!-- <a href="control?opc=10&IdDocumento=<%=x.getIdDocumento()%>" class="btn btn-success">Firmar</a> -->
     </td>
 
     <%

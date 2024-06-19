@@ -18,6 +18,14 @@
         <servlet-name>downloadfile</servlet-name>
         <servlet-class>controlador.downloadfile</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>controldownloadpdffirmado</servlet-name>
+        <servlet-class>controlador.controldownloadpdffirmado</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>controldownloadpdf</servlet-name>
+        <servlet-class>controlador.controldownloadpdf</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>control</servlet-name>
         <url-pattern>/control</url-pattern>
@@ -29,6 +37,10 @@
     <servlet-mapping>
         <servlet-name>downloadfile</servlet-name>
         <url-pattern>/downloadfile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>controldownloadpdf</servlet-name>
+        <url-pattern>/controldownloadpdf</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
