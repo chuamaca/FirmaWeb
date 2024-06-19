@@ -11,9 +11,11 @@ Data\DDocumentoFirmado.class
 Modelo\Auditoria.class
 Modelo\ServicioDocumento.class
 Util\ConexionJDBC.class
+controlador\control$Informacion.class
 Modelo\Categoria.class
 Data\DServicio.class
 Modelo\Cliente.class
+controlador\control$ApiResponse.class
 controlador\control.class
 Data\DCategoria.class
 Data\Tabla_PdfVO$2.class

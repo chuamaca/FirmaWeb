@@ -28,12 +28,12 @@ import Modelo.Categoria;
  */
 public class DDocumento {
 
-    private static final String SQL_SELECT_BY_DOCUMENTO = "SELECT IdDocumento, TipoDocumento, NombreDocumento, ArchivoOrigen FROM FIRMAFACIL.dbo.Documento where IdDocumento =? and Estado=1";
+    private static final String SQL_SELECT_BY_DOCUMENTO = "SELECT IdDocumento, TipoDocumento, NombreDocumento, ArchivoOrigen FROM Documento where IdDocumento =? and Estado=1";
 
-    private static final String SQL_INSERT = "INSERT INTO FIRMAFACIL.dbo.Documento( IdCliente, IdCategoria, ArchivoOrigen, TipoDocumento, NombreDocumento, Estado, UsuarioCrea, FechaCrea)\n"
+    private static final String SQL_INSERT = "INSERT INTO Documento( IdCliente, IdCategoria, ArchivoOrigen, TipoDocumento, NombreDocumento, Estado, UsuarioCrea, FechaCrea)\n"
             + " VALUES( ?, ?, ?, ?, ?, ?, ?, ?)";
 
-    private static final String SQL_SELECT_ID = "SELECT  ArchivoOrigen FROM FIRMAFACIL.dbo.Documento where IdDocumento =? and Estado=1";
+    private static final String SQL_SELECT_ID = "SELECT  ArchivoOrigen FROM Documento where IdDocumento =? and Estado=1";
     
 
     public int insertDocumento(Documento documento) { //, Cliente cli,Categoria cat

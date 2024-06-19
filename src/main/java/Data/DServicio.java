@@ -43,7 +43,7 @@ public class DServicio {
 
     private static final String SQL_SERVICIO_SELECT_BY_DOCUMENTO = "SELECT IdServicio , TipoDocumento , NombreDocumento , ContenidoDocumento FROM FIRMAFACIL.dbo.Servicio WHERE IdServicio =? AND Estado =1";
 
-    private static final String SQL_SERVICIO_INSERT = "INSERT INTO FIRMAFACIL.dbo.Servicio ( IdUsuario, IdDocumento, ContenidoDocumento, TipoDocumento, NombreDocumento, Lugar, FechaServicio, FechaVigencia, Estado, UsuarioCrea, FechaCrea) VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    private static final String SQL_SERVICIO_INSERT = "INSERT INTO Servicio ( IdUsuario, IdDocumento, ContenidoDocumento, TipoDocumento, NombreDocumento, Lugar, FechaServicio, FechaVigencia, Estado, UsuarioCrea, FechaCrea) VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     public List<ServicioDocumento> SelectDocumentoByCliente(int IdCliente) {
 

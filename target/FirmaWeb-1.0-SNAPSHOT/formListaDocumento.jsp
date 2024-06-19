@@ -22,7 +22,7 @@
 
             if (x.getEstado() == 0) {
                 estadoFirma = "Sin Firmado";
-            } else {
+            } else if(x.getEstado()!=0) {
                 estadoFirma = "Firmado";
             }
             out.print("<tr><td>" + x.getEmpresa() + "<td>" + x.getCategoria() + "<td>" + estadoFirma);
@@ -31,8 +31,10 @@
     <td>
         <button class="btn btn-primary btn-sm">Ver Documento</button>
         <button class="btn btn-primary btn-sm">Descargar</button>
+        <a href="control?opc=11&IdDocumento=<%=x.getIdDocumento()%>" class="btn btn-success">Firmar</a>
         <button class="btn btn-warning btn-sm">Firmar</button>
         <button class="btn btn-danger btn-sm">Anular Documento</button>
+        <!-- <a href="control?opc=10&IdDocumento=<%=x.getIdDocumento()%>" class="btn btn-success">Firmar</a> -->
     </td>
 
     <%
