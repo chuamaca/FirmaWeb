@@ -53,13 +53,13 @@
             if ("Firmado".equals(estadoFirma)) {
         %>
         <a href="#" class="btn btn-success disabled-link">Firmar</a>
-        <a href="downloadPdfFirmadoServlet?IdServicio=<%= x.getIdServicio()%>" class="btn btn-primary">Descargar</a>
+        <a href="downloadPdfFirmadoServlet?IdServicio=<%= x.getIdServicio()%>" class="btn btn-info">Descargar</a>
 
         <%
         } else {
         %>
         <a href="control?opc=11&IdDocumento=<%= x.getIdDocumento()%>" class="btn btn-success">Firmar</a>
-        <a href="#" class="btn btn-primary disabled-link">Descargar</a>
+        <a href="#" class="btn btn-info disabled-link">Descargar</a>
         <%
             }
         %>
