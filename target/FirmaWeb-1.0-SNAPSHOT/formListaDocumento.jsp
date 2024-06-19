@@ -11,6 +11,20 @@
     String estadoFirma = "";
 %>
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-right">
+            <div class="contacts-list user-panel">
+                <form action="downloadServlet" method="post" enctype="multipart/form-data">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-download"></i> Descargar Informe
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <table class="table table-striped mt-4">
     <thead>
@@ -45,8 +59,8 @@
             }
         %>
 
-        
-        <!-- <a href="control?opc=11&IdDocumento=<%=x.getIdDocumento()%>" class="btn btn-success">Firmar</a>   <button class="btn btn-warning btn-sm">Firmar</button> -->
+
+<!-- <a href="control?opc=11&IdDocumento=<%=x.getIdDocumento()%>" class="btn btn-success">Firmar</a>   <button class="btn btn-warning btn-sm">Firmar</button> -->
         <button class="btn btn-danger btn-sm">Anular Documento</button>
         <!-- <a href="control?opc=10&IdDocumento=<%=x.getIdDocumento()%>" class="btn btn-success">Firmar</a> -->
     </td>
