@@ -1,8 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="header.jsp" %>
 <h2>Subir Documento</h2>
-<form action="control" method="post" enctype="multipart/form-data" class="mt-4">
-    <input type="hidden" name="opc" value="2">
+<form action="uploadServlet" method="post" enctype="multipart/form-data">
+    
 
     <div class="form-group">
         <label for="file">Archivo:</label>
@@ -20,8 +20,8 @@
     </div>
 
     <div class="form-group">
-        <label for="client">Cliente:</label>
-        <select id="client" name="client" class="form-control" required>
+        <label for="idcliente">Cliente:</label>
+        <select id="idcliente" name="idcliente" class="form-control" required>
             <option value="1">Clinica Anglo Americana</option>
             <option value="2">Adeco</option>
             <option value="3">Empresa 3</option>
@@ -29,14 +29,15 @@
     </div>
 
     <div class="form-group">
-        <label for="signatureType">Tipo de Firma:</label>
-        <select id="signatureType" name="signatureType" class="form-control" required>
-            <option value="simple">Firma Simple</option>
-            <option value="advanced">Firma Avanzada</option>
+        <label for="idcategoria">Tipo de Firma:</label>
+        <select id="idcategoria" name="idcategoria" class="form-control" required>
+            <option value="1">Firma Simple</option>
+            <option value="2">Firma Avanzada</option>
         </select>
     </div>
 
-    <button type="submit" class="btn btn-primary btn-block">Subir Documento</button>
+ 
+    <input class="btn btn-success" type="submit">
 </form>
 
 <script>

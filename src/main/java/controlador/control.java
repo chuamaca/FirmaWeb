@@ -49,16 +49,11 @@ public class control extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         int opc = Integer.parseInt(request.getParameter("opc"));
-        
-        System.out.println("opc>>>>>>> " + opc);
-        
+
         if (opc == 1) {
             ListaDocumentosCargadosYFirmados(request, response);
-        }
-
-        if (opc == 2) {
-            subirDocumento(request, response);
         }
 
         if (opc == 10) {
@@ -78,42 +73,6 @@ public class control extends HttpServlet {
 //        String cod = request.getParameter("id"); List<ServicioDocumento> serviciodocumentoList = servicio.SelectDocumentoByCliente(1);
         request.setAttribute("dato", dServicio.SelectDocumentoByCliente(1));
         String pag = "formListaDocumento.jsp";
-        request.getRequestDispatcher(pag).forward(request, response);
-
-    }
-
-    protected void subirDocumento(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        int clientId = 1; // ID fijo del cliente
-        int estado = 1; // Estado fijo
-        int usuarioCrea = 1; // ID fijo del usuario que crea
-
-        Part filePart = request.getPart("file");
-        String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
-        String fileType = Files.probeContentType(Paths.get(fileName));
-
-        if (fileType == null || fileType.isEmpty() || fileName == null || fileName.isEmpty()) {
-            request.setAttribute("message", "Todos los campos son obligatorios.");
-            request.getRequestDispatcher("formDocumento.jsp").forward(request, response);
-            return;
-        }
-
-        String filePath = getServletContext().getRealPath("/") + "uploads/" + fileName;
-        File uploads = new File(getServletContext().getRealPath("/") + "uploads");
-        if (!uploads.exists()) {
-            uploads.mkdirs();
-        }
-        filePart.write(filePath);
-
-        byte[] archivoOrigen = new byte[(int) filePath.length()];
-        Documento obj = new Documento();
-
-        obj.setNombreDocumento(fileName);
-        obj.setIdCliente(1);
-        obj.setIdCategoria(1);
-        obj.setArchivoOrigen(archivoOrigen);
-        int insert = dDocumento.insertDocumento(obj);
-        String pag = "principal.jsp";
         request.getRequestDispatcher(pag).forward(request, response);
 
     }

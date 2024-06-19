@@ -43,7 +43,7 @@ public class DServicio {
 
     private static final String SQL_SERVICIO_SELECT_BY_DOCUMENTO = "SELECT IdServicio , TipoDocumento , NombreDocumento , ContenidoDocumento FROM FIRMAFACIL.dbo.Servicio WHERE IdServicio =? AND Estado =1";
 
-    private static final String SQL_SERVICIO_INSERT = "INSERT INTO Servicio ( IdUsuario, IdDocumento, ContenidoDocumento, TipoDocumento, NombreDocumento, Lugar, FechaServicio, FechaVigencia, Estado, UsuarioCrea, FechaCrea) VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    private static final String SQL_SERVICIO_INSERT = "INSERT INTO Servicio(IdUsuario, IdDocumento, ContenidoDocumento, TipoDocumento, NombreDocumento, Lugar, FechaServicio, FechaVigencia, Estado, UsuarioCrea, FechaCrea) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     public List<ServicioDocumento> SelectDocumentoByCliente(int IdCliente) {
 
@@ -165,20 +165,24 @@ public class DServicio {
             FechaVigencia, Estado, UsuarioCrea, FechaCrea) 
             VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
              */
-            stmt.setInt(1, 1);
-            stmt.setInt(2, servicio.getIdDocumento());
-            stmt.setBytes(3, servicio.getContenidoDocumento());
-            stmt.setString(4, servicio.getTipoDocumento());
-            stmt.setString(5, servicio.getNombreDocumento());
-            stmt.setString(6, "Lima");
-            stmt.setString(7, fechaCarga);
-            stmt.setString(8, fechaCarga);
-            stmt.setInt(9, 1);
-            stmt.setInt(10, 1);
-            stmt.setString(11, fechaCarga);
-
             System.out.println("ejecutando query:" + SQL_SERVICIO_INSERT);
-            rows = stmt.executeUpdate();
+
+            try {
+                stmt.setInt(1, 4);
+                stmt.setInt(2, servicio.getIdDocumento());
+                stmt.setBytes(3, servicio.getContenidoDocumento());
+                stmt.setString(4, servicio.getTipoDocumento());
+                stmt.setString(5, servicio.getNombreDocumento());
+                stmt.setString(6, "Lima");
+                stmt.setString(7, fechaCarga);
+                stmt.setString(8, fechaCarga);
+                stmt.setInt(9, 1);
+                stmt.setInt(10, 4);
+                stmt.setString(11, fechaCarga);
+                rows = stmt.executeUpdate();
+            } catch (Exception ex) {
+                System.out.println("rows exceptio::>>>> " + ex);
+            }
             System.out.println("Registros afectados:" + rows);
 
             if (rows > 0) {
@@ -191,6 +195,7 @@ public class DServicio {
 
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
+            System.out.println("Error " + ex);
         } finally {
             //  ConexionJDBC.close(rs);
             ConexionJDBC.close(stmt);

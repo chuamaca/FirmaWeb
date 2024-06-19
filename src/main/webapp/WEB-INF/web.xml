@@ -4,9 +4,23 @@
         <servlet-name>control</servlet-name>
         <servlet-class>controlador.control</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>controlfile</servlet-name>
+        <servlet-class>controlador.controlfile</servlet-class>
+        <multipart-config>
+            <location>/tmp</location>
+            <max-file-size>20848820</max-file-size>
+            <max-request-size>418018841</max-request-size>
+            <file-size-threshold>1048576</file-size-threshold>
+        </multipart-config>
+    </servlet>
     <servlet-mapping>
         <servlet-name>control</servlet-name>
         <url-pattern>/control</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>controlfile</servlet-name>
+        <url-pattern>/controlfile</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
