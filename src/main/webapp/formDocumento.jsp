@@ -21,17 +21,17 @@
     <div class="form-group">
         <label for="idcliente">Cliente:</label>
         <select id="idcliente" name="idcliente" class="form-control" required>
-            <option value="1">Clinica Anglo Americana</option>
-            <option value="2">Adeco</option>
-            <option value="3">Empresa 3</option>
+            <option value="1">Clinica Angloamericana</option>
+            <option value="2">Adecco Peru</option>
+            <option value="3">Netcorporate</option>
         </select>
     </div>
 
     <div class="form-group">
         <label for="idcategoria">Tipo de Firma:</label>
         <select id="idcategoria" name="idcategoria" class="form-control" required>
-            <option value="1">Firma Simple</option>
-            <option value="2">Firma Avanzada</option>
+            <option value="1">Firma Electronica Basica</option>
+            <option value="2">Firma Electronica Avanzada</option>
         </select>
     </div>
 
