@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap-theme.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/adminlte.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/estilo.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;

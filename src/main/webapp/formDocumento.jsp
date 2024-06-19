@@ -2,11 +2,10 @@
 <%@ include file="header.jsp" %>
 <h2>Subir Documento</h2>
 <form action="uploadServlet" method="post" enctype="multipart/form-data">
-    
-
+   
     <div class="form-group">
         <label for="file">Archivo:</label>
-        <input type="file" id="file" name="file" class="form-control-file" onchange="displayFileInfo()" required>
+        <input type="file" id="file" name="file" class="form-control" onchange="displayFileInfo()" required>
     </div>
 
     <div class="form-group">
