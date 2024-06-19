@@ -6,8 +6,10 @@ package controlador;
 
 import Data.DDocumento;
 import Modelo.Documento;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -40,6 +42,17 @@ public class controlfile extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
 
+    private byte[] convertInputStreamToByteArray(InputStream inputStream) throws IOException {
+        ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+        int nRead;
+        byte[] data = new byte[16384];
+        while ((nRead = inputStream.read(data, 0, data.length)) != -1) {
+            buffer.write(data, 0, nRead);
+        }
+        buffer.flush();
+        return buffer.toByteArray();
+    }
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
@@ -50,6 +63,8 @@ public class controlfile extends HttpServlet {
         int usuarioCrea = 1; // ID fijo del usuario que crea
 
         Part filePart = request.getPart("file");
+        InputStream fileContent = filePart.getInputStream();
+        byte[] archivoOrigen = convertInputStreamToByteArray(fileContent);
         
         
         String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
@@ -68,7 +83,7 @@ public class controlfile extends HttpServlet {
         }
         filePart.write(filePath);
 
-        byte[] archivoOrigen = new byte[(int) filePath.length()];
+    
         Documento obj = new Documento();
 
         obj.setNombreDocumento(fileName);
