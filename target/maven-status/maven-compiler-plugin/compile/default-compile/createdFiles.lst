@@ -5,6 +5,7 @@ Util\SQLConexionNoValido.class
 Modelo\Auditoria.class
 Modelo\Categoria.class
 Modelo\Cliente.class
+controlador\login.class
 controlador\controlfile.class
 Data\DCategoria.class
 Data\Tabla_PdfVO$2.class

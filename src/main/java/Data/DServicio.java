@@ -37,7 +37,15 @@ public class DServicio {
             + "inner join Cliente c on d.IdCliente =c.IdCliente \n"
             + "inner join Categoria c2 on c2.IdCategoria =d.IdCategoria \n"
             + "left join Usuario u on u.IdUsuario =s.IdUsuario\n";
-    // + "where c.IdCliente =?";
+
+    private String SQL_SELECT_BY_CLIENTE_FILTRO = "select d.IdDocumento, c.Nombre as 'Empresa', c2.Nombre as 'Categoria' , d.ArchivoOrigen, COALESCE(s.IdServicio , 0) as 'Firmado', \n"
+            + "s.FechaServicio ,s.FechaVigencia ,u.NombreUsuario \n"
+            + "from Documento d left join Servicio s \n"
+            + "on d.IdDocumento =s.IdDocumento \n"
+            + "inner join Cliente c on d.IdCliente =c.IdCliente \n"
+            + "inner join Categoria c2 on c2.IdCategoria =d.IdCategoria \n"
+            + "left join Usuario u on u.IdUsuario =s.IdUsuario\n"
+            + "where c.IdCliente =?";
 
     private static final String SQL_SELECT_SERVICIO_ID = "SELECT ContenidoDocumento  FROM FIRMAFACIL.dbo.Servicio where IdServicio =? and Estado =1";
 
@@ -46,7 +54,7 @@ public class DServicio {
     private static final String SQL_SERVICIO_INSERT = "INSERT INTO Servicio(IdUsuario, IdDocumento, ContenidoDocumento, TipoDocumento, NombreDocumento, Lugar, FechaServicio, FechaVigencia, Estado, UsuarioCrea, FechaCrea) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     public List<ServicioDocumento> SelectDocumentoByCliente(int IdCliente) {
-
+       
         System.out.println("SelectByNroExpediente: " + IdCliente);
 
         Connection conn = null;
