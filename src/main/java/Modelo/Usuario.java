@@ -19,6 +19,10 @@ public class Usuario extends Auditoria {
     public String TipoDocumento;
     public String NumeroDocumento;
     public String Imagen;
+    
+    public Usuario(){
+        
+    }
 
     public Usuario(int IdUsuario, String NombreUsuario, String Contrasena, String Correo, String TipoDocumento, String NumeroDocumento, String Imagen, int Estado, int UsuarioCrea, Date FechaCrea, int UsuarioModifica, Date FechaModifica, int UsuarioElimina, Date FechaElimina) {
         super(Estado, UsuarioCrea, FechaCrea, UsuarioModifica, FechaModifica, UsuarioElimina, FechaElimina);
