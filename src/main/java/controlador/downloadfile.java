@@ -14,6 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.poi.ss.SpreadsheetVersion;
 import org.apache.poi.ss.usermodel.Cell;
@@ -50,7 +51,20 @@ public class downloadfile extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        List<ServicioDocumento> listaServicioDocumento = dServicio.SelectDocumentoByCliente(1);
+        
+         HttpSession session = request.getSession();
+        boolean isAdmin = (Boolean) session.getAttribute("isAdmin");
+        int idCliente = (Integer) session.getAttribute("idCliente");
+
+        List<ServicioDocumento> listaServicioDocumento;
+
+        if (isAdmin) {
+            // Admin sees all documents
+            listaServicioDocumento = (List<ServicioDocumento>) dServicio.SelectAllDocumentos();
+        } else {
+            // Regular user sees documents only for their client
+            listaServicioDocumento = dServicio.SelectDocumentoByCliente(idCliente);
+        }
 
         Workbook workbook = new XSSFWorkbook();
         Sheet sheet = workbook.createSheet("Listado De Documentos");

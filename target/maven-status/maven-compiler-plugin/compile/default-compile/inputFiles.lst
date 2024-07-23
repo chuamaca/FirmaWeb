@@ -1,24 +1,24 @@
-C:\Users\josso\Documents\GitHub\FirmaWeb\src\main\java\Data\Tabla_PdfVO.java
-C:\Users\josso\Documents\GitHub\FirmaWeb\src\main\java\Data\DDocumentoFirmado.java
-C:\Users\josso\Documents\GitHub\FirmaWeb\src\main\java\Modelo\Auditoria.java
-C:\Users\josso\Documents\GitHub\FirmaWeb\src\main\java\controlador\controldownloadpdffirmado.java
-C:\Users\josso\Documents\GitHub\FirmaWeb\src\main\java\Data\DServicio.java
-C:\Users\josso\Documents\GitHub\FirmaWeb\src\main\java\Modelo\Documento.java
-C:\Users\josso\Documents\GitHub\FirmaWeb\src\main\java\controlador\login.java
-C:\Users\josso\Documents\GitHub\FirmaWeb\src\main\java\Util\SQLConexionNoValido.java
-C:\Users\josso\Documents\GitHub\FirmaWeb\src\main\java\controlador\controlfile.java
-C:\Users\josso\Documents\GitHub\FirmaWeb\src\main\java\Util\ConexionJDBC.java
-C:\Users\josso\Documents\GitHub\FirmaWeb\src\main\java\Data\DUsuario.java
-C:\Users\josso\Documents\GitHub\FirmaWeb\src\main\java\Data\PruebaConexion.java
-C:\Users\josso\Documents\GitHub\FirmaWeb\src\main\java\Modelo\Categoria.java
-C:\Users\josso\Documents\GitHub\FirmaWeb\src\main\java\controlador\controldownloadpdf.java
-C:\Users\josso\Documents\GitHub\FirmaWeb\src\main\java\Modelo\Servicio.java
-C:\Users\josso\Documents\GitHub\FirmaWeb\src\main\java\Data\DCategoria.java
-C:\Users\josso\Documents\GitHub\FirmaWeb\src\main\java\Util\imgTabla.java
-C:\Users\josso\Documents\GitHub\FirmaWeb\src\main\java\Modelo\Usuario.java
-C:\Users\josso\Documents\GitHub\FirmaWeb\src\main\java\controlador\downloadfile.java
-C:\Users\josso\Documents\GitHub\FirmaWeb\src\main\java\Data\DCliente.java
-C:\Users\josso\Documents\GitHub\FirmaWeb\src\main\java\controlador\control.java
-C:\Users\josso\Documents\GitHub\FirmaWeb\src\main\java\Data\DDocumento.java
-C:\Users\josso\Documents\GitHub\FirmaWeb\src\main\java\Modelo\Cliente.java
-C:\Users\josso\Documents\GitHub\FirmaWeb\src\main\java\Modelo\ServicioDocumento.java
+D:\1 UTP 2024\FirmaWeb\src\main\java\Data\Tabla_PdfVO.java
+D:\1 UTP 2024\FirmaWeb\src\main\java\Data\DCategoria.java
+D:\1 UTP 2024\FirmaWeb\src\main\java\Modelo\Servicio.java
+D:\1 UTP 2024\FirmaWeb\src\main\java\Util\ConexionJDBC.java
+D:\1 UTP 2024\FirmaWeb\src\main\java\controlador\downloadfile.java
+D:\1 UTP 2024\FirmaWeb\src\main\java\Modelo\Documento.java
+D:\1 UTP 2024\FirmaWeb\src\main\java\Data\DUsuario.java
+D:\1 UTP 2024\FirmaWeb\src\main\java\controlador\login.java
+D:\1 UTP 2024\FirmaWeb\src\main\java\controlador\controlfile.java
+D:\1 UTP 2024\FirmaWeb\src\main\java\Data\DDocumentoFirmado.java
+D:\1 UTP 2024\FirmaWeb\src\main\java\Data\DServicio.java
+D:\1 UTP 2024\FirmaWeb\src\main\java\Modelo\Categoria.java
+D:\1 UTP 2024\FirmaWeb\src\main\java\Modelo\Cliente.java
+D:\1 UTP 2024\FirmaWeb\src\main\java\Util\SQLConexionNoValido.java
+D:\1 UTP 2024\FirmaWeb\src\main\java\Data\DDocumento.java
+D:\1 UTP 2024\FirmaWeb\src\main\java\Data\PruebaConexion.java
+D:\1 UTP 2024\FirmaWeb\src\main\java\Data\DCliente.java
+D:\1 UTP 2024\FirmaWeb\src\main\java\Modelo\Auditoria.java
+D:\1 UTP 2024\FirmaWeb\src\main\java\Modelo\Usuario.java
+D:\1 UTP 2024\FirmaWeb\src\main\java\Util\imgTabla.java
+D:\1 UTP 2024\FirmaWeb\src\main\java\controlador\controldownloadpdf.java
+D:\1 UTP 2024\FirmaWeb\src\main\java\controlador\control.java
+D:\1 UTP 2024\FirmaWeb\src\main\java\controlador\controldownloadpdffirmado.java
+D:\1 UTP 2024\FirmaWeb\src\main\java\Modelo\ServicioDocumento.java
