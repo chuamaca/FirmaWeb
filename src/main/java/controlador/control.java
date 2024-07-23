@@ -8,6 +8,7 @@ import Data.DDocumento;
 import Data.DServicio;
 import Modelo.Documento;
 import Modelo.Servicio;
+import Modelo.ServicioDocumento;
 import com.google.gson.Gson;
 import java.io.File;
 import java.io.IOException;
@@ -27,6 +28,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
 /**
@@ -70,14 +72,26 @@ public class control extends HttpServlet {
     protected void ListaDocumentosCargadosYFirmados(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-//        String cod = request.getParameter("id"); List<ServicioDocumento> serviciodocumentoList = servicio.SelectDocumentoByCliente(1);
-        request.setAttribute("dato", dServicio.SelectDocumentoByCliente(1));
+        HttpSession session = request.getSession();
+        boolean isAdmin = (Boolean) session.getAttribute("isAdmin");
+        int idCliente = (Integer) session.getAttribute("idCliente");
+
+        List<ServicioDocumento> listaDocumentos;
+
+        if (isAdmin) {
+            // Admin sees all documents
+            listaDocumentos = (List<ServicioDocumento>) dServicio.SelectAllDocumentos();
+        } else {
+            // Regular user sees documents only for their client
+            listaDocumentos = dServicio.SelectDocumentoByCliente(idCliente);
+        }
+
+        request.setAttribute("dato", listaDocumentos);
         String pag = "formListaDocumento.jsp";
         request.getRequestDispatcher(pag).forward(request, response);
-
     }
 
-    protected void ListaDocumentoByIdDocumento(HttpServletRequest request, HttpServletResponse response)
+protected void ListaDocumentoByIdDocumento(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int idDocumento = Integer.parseInt(request.getParameter("IdDocumento"));
         Documento doc = new Documento();
@@ -85,7 +99,6 @@ public class control extends HttpServlet {
         request.setAttribute("dato", dDocumento.SelectByIdDocumento(doc));
         String pag = "formFirma.jsp";
         request.getRequestDispatcher(pag).forward(request, response);
-
     }
 
     protected void FirmarDocumento(HttpServletRequest request, HttpServletResponse response)
