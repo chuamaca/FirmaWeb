@@ -6,7 +6,7 @@ El objetivo principal de este proyecto es diseñar e implementar un sistema web 
 
 ## Librerias usadas
 
-#### *1. Springboot*
+#### *1. Maven Springboot*
 ##### 1.1. Repositorio Servicio API REST
   https://github.com/chuamaca/WSFirmaDigital
 
@@ -26,13 +26,16 @@ El objetivo principal de este proyecto es diseñar e implementar un sistema web 
 ##
 
 ##### *2. Servlets y JSP*
-##### 2.1. Aplicacion Web
+###### 2.1. Aplicacion Web
   Plataforma de entorno WEB para la Administracion y gestion de Firmas electronicas.
 
 ##
 
-##### *3. Lombok*
+#### *3. Lombok*
   Lombok es una librería para Java que proporciona anotaciones y funciones para reducir la cantidad de código boilerplate
+
+#### *4. Apache Poi (Descargar Archivos Excel)*
+  proporciona bibliotecas Java puras para leer y escribir archivos en formatos de Microsoft Office, como Word, PowerPoint y Excel.
 
 
 
