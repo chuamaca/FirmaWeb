@@ -152,9 +152,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="control?opc=1"><i class="fas fa-list"></i> Lista de Documentos</a>
             </li>
-            <li class="nav-item">
+<!--            <li class="nav-item">
                 <a class="nav-link" href="${pageContext.request.contextPath}/plantillaCrud.jsp"><i class="fas fa-edit"></i> CRUD Plantillas</a>
-            </li>
+            </li>-->
         </ul>
     </div>
     <div class="container-custom">

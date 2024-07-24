@@ -48,9 +48,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="control?opc=1">Lista de Documentos</a>
                 </li>
-                <li class="nav-item">
+<!--                <li class="nav-item">
                     <a class="nav-link" href="${pageContext.request.contextPath}/plantillaCrud.jsp">CRUD Plantillas</a>
-                </li>
+                </li>-->
             </ul>
         </div>
     </nav>

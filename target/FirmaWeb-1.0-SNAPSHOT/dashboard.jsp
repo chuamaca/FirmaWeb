@@ -20,7 +20,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+<!--        <div class="col-md-4">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">CRUD Plantillas</h5>
@@ -28,6 +28,6 @@
                     <a href="${pageContext.request.contextPath}/plantillaCrud.jsp" class="btn btn-primary">Gestionar Plantillas</a>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
 <%@ include file="footer.jsp" %>
