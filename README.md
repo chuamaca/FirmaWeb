@@ -25,7 +25,7 @@ El objetivo principal de este proyecto es diseñar e implementar un sistema web 
 
 ##
 
-##### *2. Servlets y JSP*
+#### *2. Servlets y JSP*
 ###### 2.1. Aplicacion Web
   Plataforma de entorno WEB para la Administracion y gestion de Firmas electronicas.
 
